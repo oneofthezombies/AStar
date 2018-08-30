@@ -1,9 +1,9 @@
 #pragma once
 
+#include "ootzMath.h"
+
 namespace ootz
 {
-
-using float3 = XMFLOAT3;
 
 class AStar
 {
@@ -15,18 +15,24 @@ public:
 
 struct Cell
 {
-    float3 coord;
+    Vector3 coord;
 
     Cell();
+    Cell(const float x, const float y, const float z);
+    Cell(const Vector3& coord);
 };
 
 class GridGraph
 {
 private:
-    std::vector<Cell> m_Cells;
+    std::vector<Cell> cells_;
 
 public:
-
+    GridGraph(
+        const uint32_t numWidth, 
+        const uint32_t numDepth, 
+        const float stride, 
+        const Vector3& center);
 };
 
 } // namespace ootz
