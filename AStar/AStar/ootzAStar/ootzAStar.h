@@ -1,17 +1,32 @@
 #pragma once
 
-
-
 namespace ootz
 {
 
-using Float3 = DirectX::XMFLOAT3;
+using float3 = XMFLOAT3;
 
 class AStar
 {
+private:
 
+
+public:
 };
 
+struct Cell
+{
+    float3 coord;
 
+    Cell();
+};
+
+class GridGraph
+{
+private:
+    std::vector<Cell> m_Cells;
+
+public:
+
+};
 
 } // namespace ootz
