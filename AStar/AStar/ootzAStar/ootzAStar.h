@@ -7,25 +7,28 @@ namespace ootz
 
 class AStar
 {
-private:
-
-
 public:
+    static std::vector<Vector3> FindPath(const GridGraph& graph, const Vector3& start, const Vector3& goal);
+};
+
+enum class Attributes
+{
+    kReachable,
+    kNonReachable,
 };
 
 struct Cell
 {
-    Vector3 coord;
+    Attributes attributes = Attributes::kReachable;
 
     Cell();
-    Cell(const float x, const float y, const float z);
-    Cell(const Vector3& coord);
 };
 
 class GridGraph
 {
 private:
-    std::vector<Cell> cells_;
+    const float stride_;
+    std::unordered_map<Vector3, Cell> cells_;
 
 public:
     GridGraph(
@@ -33,6 +36,9 @@ public:
         const uint32_t numDepth, 
         const float stride, 
         const Vector3& center);
+
+    void AddNonReachable(const Vector3& coord);
+    std::vector<Cell> GetNeighbors(const Vector3& position);
 };
 
 } // namespace ootz

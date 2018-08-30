@@ -14,6 +14,21 @@ Vector3 Vector3::One()
     return Vector3(1.0f, 1.0f, 1.0f);
 }
 
+std::vector<Vector3> Vector3::EightDirections()
+{
+    return std::vector<Vector3>
+    {
+        Vector3(0.0f, 0.0f, 1.0f),
+        Vector3(1.0f, 0.0f, 1.0f),
+        Vector3(1.0f, 0.0f, 0.0f),
+        Vector3(1.0f, 0.0f, -1.0f),
+        Vector3(0.0f, 0.0f, -1.0f),
+        Vector3(-1.0f, 0.0f, -1.0f),
+        Vector3(-1.0f, 0.0f, 0.0f),
+        Vector3(-1.0f, 0.0f, 1.0f)
+    };
+}
+
 Vector3::Vector3()
     : XMFLOAT3(0.0f, 0.0f, 0.0f)
 {
@@ -43,6 +58,15 @@ Vector3& Vector3::operator-=(const Vector3& rhs)
     x -= rhs.x;
     y -= rhs.y;
     z -= rhs.z;
+
+    return *this;
+}
+
+Vector3& Vector3::operator*=(const float rhs)
+{
+    x *= rhs;
+    y *= rhs;
+    z *= rhs;
 
     return *this;
 }

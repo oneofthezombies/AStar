@@ -7,6 +7,7 @@ struct Vector3 : public XMFLOAT3
 {
     static Vector3 Zero();
     static Vector3 One();
+    static std::vector<Vector3> EightDirections();
 
     Vector3();
     Vector3(const float x, const float y, const float z);
@@ -14,6 +15,7 @@ struct Vector3 : public XMFLOAT3
 
     Vector3& operator+=(const Vector3& rhs);
     Vector3& operator-=(const Vector3& rhs);
+    Vector3& operator*=(const float rhs);
 
     friend Vector3 operator+(const Vector3& lhs, const Vector3& rhs);
     friend Vector3 operator-(const Vector3& lhs, const Vector3& rhs);
