@@ -1,11 +1,12 @@
 #pragma once
 
-#include <vector>
-
 #include "ootzUtility.hpp"
 
 namespace ootz
 {
+
+struct Vector3;
+using Vector3s = std::vector<Vector3>;
 
 struct Vector3
 {

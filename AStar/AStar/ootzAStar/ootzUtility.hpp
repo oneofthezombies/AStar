@@ -24,6 +24,9 @@ using IsUnsigned = std::enable_if_t<std::is_unsigned_v<Ts>>;
 class Utility
 {
 public:
+
+    // [ start, start + step, start + step * 2, ..., stop )
+    // e.g.) Range(0, 6, 2) = [0, 2, 4]
     template<
         typename RetT = Int,
         typename T1 = RetT,
@@ -40,6 +43,8 @@ public:
         return ret;
     }
 
+    // [ start, start + 1, ..., start + count )
+    // e.g.) Range(1, 3) = [1, 2, 3]
     template<
         typename RetT = Int,
         typename T1 = RetT,
@@ -50,6 +55,8 @@ public:
         return Range<RetT>(start, start + count, 1);
     }
 
+    // [ 0, 1, ..., count )
+    // e.g.) Range(3) = [0, 1, 2]
     template<
         typename RetT = Int,
         typename T = RetT,
