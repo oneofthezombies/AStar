@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="ootzAStar\ootzAStar.hpp" />
     <ClInclude Include="ootzAStar\ootzMath.hpp" />
+    <ClInclude Include="ootzAStar\ootzUtility.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

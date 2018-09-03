@@ -27,6 +27,9 @@
     <ClInclude Include="ootzAStar\ootzAStar.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ootzAStar\ootzUtility.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

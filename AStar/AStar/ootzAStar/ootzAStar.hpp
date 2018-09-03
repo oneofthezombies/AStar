@@ -1,21 +1,16 @@
 #pragma once
 
+#include <algorithm>
+#include <deque>
+#include <numeric>
+#include <unordered_set>
+#include <unordered_map>
+
 #include "ootzMath.hpp"
+#include "ootzUtility.hpp"
 
 namespace ootz
 {
-
-class AStar
-{
-public:
-    static std::vector<Vector3> FindPath(const GridGraph& graph, const Vector3& start, const Vector3& goal)
-    {
-        std::unordered_set<Vector3> openSet;
-        std::unordered_set<Vector3> closedSet;
-
-
-    }
-};
 
 enum class Attributes
 {
@@ -35,45 +30,62 @@ struct Cell
 class GridGraph
 {
 private:
-    const float stride_;
-    std::unordered_map<Vector3, Cell> cells_;
+    const float nodeSize_;
+    //std::unordered_map<Vector3Int, Cell> cells_;
 
 public:
     GridGraph(
-        const uint32_t numWidth,
-        const uint32_t numDepth,
-        const float stride,
-        const Vector3& center)
-        : stride_(stride)
+        const UInt numNodeX,
+        const UInt numNodeZ,
+        const float nodeSize = 1.0f,
+        const Vector3& center = Vector3::Zero())
+        : nodeSize_(nodeSize)
     {
-        const uint32_t numTotal = numWidth * numDepth;
+        const UInt numNode = numNodeX * numNodeZ;
 
-        std::vector<uint32_t> nums(numTotal);
-        std::iota(nums.begin(), nums.end(), 0);
+        const std::vector<UInt> nums = Utility::Range<UInt>(numNode);
 
-        const uint32_t numWidthWithoutCenter = numWidth - 1;
-        const uint32_t numDepthWithoutCenter = numDepth - 1;
+        const UInt widthWithoutCenter = numNodeX - 1;
+        const UInt depthWithoutCenter = numNodeZ - 1;
 
-        const uint32_t numHalfWidth = numWidthWithoutCenter / 2;
-        const uint32_t numHalfDepth = numDepthWithoutCenter / 2;
+        const UInt halfWidth = widthWithoutCenter / 2;
+        const UInt halfDepth = depthWithoutCenter / 2;
 
-        const float fNumHalfWidth = static_cast<float>(numHalfWidth);
-        const float fNumHalfWidth = static_cast<float>(numHalfDepth);
+        const float fhalfWidth = static_cast<float>(halfWidth);
+        const float fhalfDepth = static_cast<float>(halfDepth);
 
-        const Vector3 offset = center - Vector3(numHalfWidth, 0.0f, numHalfDepth) * stride;
+        const Vector3 offset = center - Vector3(fhalfWidth, 0.0f, fhalfDepth) * nodeSize;
 
-        std::for_each(
-            nums.begin(), nums.end(),
-            [this, &numWidth, &numDepth, &stride, &offset](const uint32_t n)
-        {
-            const uint32_t xIdx = n / numWidth;
-            const uint32_t zIdx = n % numDepth;
+        //std::for_each(
+        //    nums.begin(), nums.end(),
+        //    [this, &numNodeX, &numNodeZ, &nodeSize, &offset](const uint32_t n)
+        //{
+        //    const uint32_t xIdx = n / numNodeX;
+        //    const uint32_t zIdx = n % numNodeZ;
 
-            const float fXIdx = static_cast<float>(xIdx);
-            const float fXIdx = static_cast<float>(zIdx);
+        //    const float fXIdx = static_cast<float>(xIdx);
+        //    const float fZIdx = static_cast<float>(zIdx);
 
-            cells_.emplace(Vector3(fXIdx, 0.0f, fXIdx) * stride + offset, Cell());
-        });
+        //    //cells_.emplace(Vector3(fXIdx, 0.0f, fZIdx) * nodeSize + offset, Cell());
+        //});
+    }
+
+    std::deque<Vector3> AStar(const Vector3& start, const Vector3& goal)
+    {
+        //std::unordered_set<Vector3> closedSet;
+        //
+        //std::unordered_set<Vector3> openSet;
+        //openSet.insert(start);
+
+        //std::unordered_map<Vector3, Vector3> cameFrom;
+
+        //std::unordered_map<Vector3, uint32_t> gScore;
+
+        ////gScore.emplace(start, std::numeric_limits<uint32_t>().max());
+
+        //std::unordered_map<Vector3, uint32_t> fScore;
+
+
     }
 
     void AddNonReachable(const Vector3& coord)
@@ -86,10 +98,21 @@ public:
         std::for_each(neighbors.begin(), neighbors.end(),
             [&position, this](Vector3& neighbor)
         {
-            neighbor *= stride_;
+            neighbor *= nodeSize_;
             neighbor += position;
         });
     }
+
+    uint32_t HeuristicCostEstimate(const Vector3& start, const Vector3& goal)
+    {
+
+    }
 };
+
+
+
+
+
+
 
 } // namespace ootz

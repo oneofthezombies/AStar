@@ -1,12 +1,41 @@
 #pragma once
 
-#include "stdafx.h"
+#include <vector>
+
+#include "ootzUtility.hpp"
 
 namespace ootz
 {
 
-struct Vector3 : public XMFLOAT3
+struct Vector3
 {
+    // static properties
+    // ...
+
+    // properties
+    float x;
+    float y;
+    float z;
+
+    // constructors
+    Vector3()
+        : x(0.0f)
+        , y(0.0f)
+        , z(0.0f)
+    {
+    }
+
+    Vector3(const float x, const float y, const float z)
+        : x(x)
+        , y(y)
+        , z(z)
+    {
+    }
+
+    // public methods
+    // ...
+
+    // static methods
     static Vector3 Zero()
     {
         return Vector3(0.0f, 0.0f, 0.0f);
@@ -32,21 +61,7 @@ struct Vector3 : public XMFLOAT3
         };
     }
 
-    Vector3()
-        : XMFLOAT3(0.0f, 0.0f, 0.0f)
-    {
-    }
-
-    Vector3(const float x, const float y, const float z)
-        : XMFLOAT3(x, y, z)
-    {
-    }
-
-    Vector3(const XMFLOAT3& other)
-        : XMFLOAT3(other)
-    {
-    }
-
+    // operators
     Vector3& operator+=(const Vector3& other)
     {
         x += other.x;
@@ -100,8 +115,32 @@ Vector3 operator*(const float lhs, const Vector3& rhs)
     return rhs * lhs;
 }
 
-struct Vector2Int : public XMINT2
+struct Vector2Int
 {
+    // static properties
+    // ...
+
+    // properties
+    Int x;
+    Int y;
+
+    // constructors
+    Vector2Int()
+        : x(0)
+        , y(0)
+    {
+    }
+
+    Vector2Int(const Int x, const Int y)
+        : x(x)
+        , y(y)
+    {
+    }
+
+    // public methods
+    // ...
+
+    // static methods
     static Vector2Int Zero()
     {
         return Vector2Int(0, 0);
@@ -112,21 +151,7 @@ struct Vector2Int : public XMINT2
         return Vector2Int(1, 1);
     }
 
-    Vector2Int()
-        : XMINT2(0, 0)
-    {
-    }
-
-    Vector2Int(const int32_t x, const int32_t y)
-        : XMINT2(x, y)
-    {
-    }
-
-    Vector2Int(const XMINT2& other)
-        : XMINT2(other)
-    {
-    }
-
+    // operators
     Vector2Int& operator+=(const Vector2Int& other)
     {
         x += other.x;
@@ -145,8 +170,8 @@ struct Vector2Int : public XMINT2
 
     friend Vector2Int operator+(const Vector2Int& lhs, const Vector2Int& rhs);
     friend Vector2Int operator-(const Vector2Int& lhs, const Vector2Int& rhs);
-    friend Vector2Int operator*(const Vector2Int& lhs, const int32_t rhs);
-    friend Vector2Int operator*(const int32_t lhs, const Vector2Int& rhs);
+    friend Vector2Int operator*(const Vector2Int& lhs, const Int rhs);
+    friend Vector2Int operator*(const Int lhs, const Vector2Int& rhs);
 };
 
 Vector2Int operator+(const Vector2Int& lhs, const Vector2Int& rhs)
@@ -159,12 +184,96 @@ Vector2Int operator-(const Vector2Int& lhs, const Vector2Int& rhs)
     return Vector2Int(lhs.x - rhs.x, lhs.y - rhs.y);
 }
 
-Vector2Int operator*(const Vector2Int& lhs, const int32_t rhs)
+Vector2Int operator*(const Vector2Int& lhs, const Int rhs)
 {
     return Vector2Int(lhs.x * rhs, lhs.y * rhs);
 }
 
-Vector2Int operator*(const int32_t lhs, const Vector2Int& rhs)
+Vector2Int operator*(const Int lhs, const Vector2Int& rhs)
+{
+    return rhs * lhs;
+}
+
+struct Vector3Int
+{
+    // static properties
+    // ...
+
+    // properties
+    Int x;
+    Int y;
+    Int z;
+
+    // constructors
+    Vector3Int()
+        : x(0)
+        , y(0)
+        , z(0)
+    {
+    }
+
+    Vector3Int(const Int x, const Int y, const Int z)
+        : x(x)
+        , y(y)
+        , z(z)
+    {
+    }
+
+    // public methods
+    // ...
+
+    // static methods
+    static Vector3Int Zero()
+    {
+        return Vector3Int(0, 0, 0);
+    }
+
+    static Vector3Int One()
+    {
+        return Vector3Int(1, 1, 1);
+    }
+
+    // operators
+    Vector3Int& operator+=(const Vector3Int& other)
+    {
+        x += other.x;
+        y += other.y;
+        z += other.z;
+
+        return *this;
+    }
+
+    Vector3Int& operator-=(const Vector3Int& other)
+    {
+        x -= other.x;
+        y -= other.y;
+        z -= other.z;
+
+        return *this;
+    }
+
+    friend Vector3Int operator+(const Vector3Int& lhs, const Vector3Int& rhs);
+    friend Vector3Int operator-(const Vector3Int& lhs, const Vector3Int& rhs);
+    friend Vector3Int operator*(const Vector3Int& lhs, const Int rhs);
+    friend Vector3Int operator*(const Int lhs, const Vector3Int& rhs);
+};
+
+Vector3Int operator+(const Vector3Int& lhs, const Vector3Int& rhs)
+{
+    return Vector3Int(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
+}
+
+Vector3Int operator-(const Vector3Int& lhs, const Vector3Int& rhs)
+{
+    return Vector3Int(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
+}
+
+Vector3Int operator*(const Vector3Int& lhs, const Int rhs)
+{
+    return  Vector3Int(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
+}
+
+Vector3Int operator*(const Int lhs, const Vector3Int& rhs)
 {
     return rhs * lhs;
 }
