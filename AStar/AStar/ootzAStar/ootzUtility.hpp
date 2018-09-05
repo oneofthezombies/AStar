@@ -1,25 +1,13 @@
 #pragma once
 
-#include <vector>
-#include <numeric>
+#include <iostream>
+
+#include "ootzType.hpp"
 
 namespace ootz
 {
 
-using Int = int32_t;
-using UInt = uint32_t;
-using Int64 = int64_t;
-using UInt64 = uint64_t;
-
-using Ints = std::vector<Int>;
-using UInts = std::vector<UInt>;
-using Floats = std::vector<float>;
-
-template<typename ...Ts>
-using IsIntegral = std::enable_if_t<std::is_integral_v<Ts>>;
-
-template<typename ...Ts>
-using IsUnsigned = std::enable_if_t<std::is_unsigned_v<Ts>>;
+using std::cout;
 
 class Utility
 {
@@ -66,5 +54,9 @@ public:
         return Range<RetT>(0, count, 1);
     }
 };
+
+std::ostream& Endl(std::ostream& os);
+std::ostream& operator<<(std::ostream& os, const Vector3& val);
+std::ostream& operator<<(std::ostream& os, const Vector3Int& val);
 
 } // namespace ootz

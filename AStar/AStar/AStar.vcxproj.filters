@@ -30,12 +30,39 @@
     <ClInclude Include="ootzAStar\ootzUtility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ootzAStar\ootzType.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ootzAStar\ootzVector3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ootzAStar\ootzVector3Int.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ootzAStar\ootzVector2Int.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ootzAStar\ootzVector3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ootzAStar\ootzVector3Int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ootzAStar\ootzUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ootzAStar\ootzVector2Int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ootzAStar\ootzAStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
