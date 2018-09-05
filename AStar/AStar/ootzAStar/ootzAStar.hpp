@@ -3,8 +3,6 @@
 #include <map>
 #include <deque>
 
-#include <boost/functional/hash.hpp>
-
 #include "ootzType.hpp"
 #include "ootzUtility.hpp"
 #include "ootzVector3.hpp"
@@ -33,7 +31,11 @@ class GridGraph
 public:
     using FScore = UInt;
     using Node = Vector3Int;
-    using NodeHash = boost::hash<Node>;
+
+    struct NodeHash
+    {
+        std::size_t operator()(const Node& value) const;
+    };
 
 private:
     const float nodeSize_;

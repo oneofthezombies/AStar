@@ -1,10 +1,22 @@
 #include "stdafx.h"
 #include "ootzAStar.hpp"
 
-#include "ootzVector3Int.hpp"
+#include <unordered_set>
+#include <unordered_map>
+
+#include <boost/functional/hash.hpp>
 
 namespace ootz
 {
+
+std::size_t GridGraph::NodeHash::operator()(const Node& key) const
+{
+    std::size_t seed = 0;
+    boost::hash_combine(seed, key.x);
+    boost::hash_combine(seed, key.y);
+    boost::hash_combine(seed, key.z);
+    return seed;
+}
 
 GridGraph::GridGraph(
     const UInt numNodeX,
@@ -47,18 +59,15 @@ GridGraph::GridGraph(
 
 std::deque<Vector3> GridGraph::AStar(const Vector3& start, const Vector3& goal)
 {
-    //std::unordered_set<Node, NodeHash> closedSet;
-    //
-    //std::unordered_set<Node, NodeHash> openSet;
-    //openSet.emplace(GetNearestNode(start));
+    std::unordered_set<Node, NodeHash> closedSet;
+    std::unordered_set<Node, NodeHash> openSet;
+    openSet.emplace(GetNearestNode(start));
 
-    //std::unordered_map<Node, Node, NodeHash> cameFrom;
+    std::unordered_map<Node, Node, NodeHash> cameFrom;
+    std::unordered_map<Node, UInt, NodeHash> gScore;
+    gScore.emplace(start, std::numeric_limits<UInt>().max());
 
-    //std::unordered_map<Node, UInt, NodeHash> gScore;
-
-    ////gScore.emplace(start, std::numeric_limits<uint32_t>().max());
-
-    //std::unordered_map<Node, UInt, NodeHash> fScore;
+    std::unordered_map<Node, UInt, NodeHash> fScore;
 
     return std::deque<Vector3>();
 }
@@ -91,5 +100,7 @@ GridGraph::Node GridGraph::GetNearestNode(const Vector3& position)
     const Vector3 scaledPos(relativePos / nodeSize_);
     return scaledPos.Round().ToVector3Int();
 }
+
+
 
 } // namespace ootz
