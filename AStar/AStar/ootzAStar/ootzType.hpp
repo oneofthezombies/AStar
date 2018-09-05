@@ -9,6 +9,7 @@ using Int = int32_t;
 using UInt = uint32_t;
 using Int64 = int64_t;
 using UInt64 = uint64_t;
+using Size = std::size_t;
 
 struct Vector2;
 struct Vector3;

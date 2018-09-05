@@ -9,9 +9,9 @@
 namespace ootz
 {
 
-std::size_t GridGraph::NodeHash::operator()(const Node& key) const
+Size GridGraph::NodeHash::operator()(const Node& key) const
 {
-    std::size_t seed = 0;
+    Size seed = 0;
     boost::hash_combine(seed, key.x);
     boost::hash_combine(seed, key.y);
     boost::hash_combine(seed, key.z);

@@ -34,7 +34,7 @@ public:
 
     struct NodeHash
     {
-        std::size_t operator()(const Node& value) const;
+        Size operator()(const Node& value) const;
     };
 
 private:
