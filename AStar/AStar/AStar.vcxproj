@@ -170,6 +170,7 @@
     <ClInclude Include="ootzAStar\ootzVector2Int.hpp" />
     <ClInclude Include="ootzAStar\ootzVector3.hpp" />
     <ClInclude Include="ootzAStar\ootzVector3Int.hpp" />
+    <ClInclude Include="ootzAStar\SinglyLinkedList.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

@@ -65,7 +65,7 @@ std::deque<Vector3> GridGraph::AStar(const Vector3& start, const Vector3& goal)
 
     std::unordered_map<Node, Node, NodeHash> cameFrom;
     std::unordered_map<Node, UInt, NodeHash> gScore;
-    gScore.emplace(start, std::numeric_limits<UInt>().max());
+    gScore.emplace(GetNearestNode(start), std::numeric_limits<UInt>().max());
 
     std::unordered_map<Node, UInt, NodeHash> fScore;
 

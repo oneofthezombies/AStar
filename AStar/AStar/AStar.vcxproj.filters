@@ -42,6 +42,9 @@
     <ClInclude Include="ootzAStar\ootzVector2Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ootzAStar\SinglyLinkedList.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
