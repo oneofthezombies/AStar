@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "ootzVector3Int.hpp"
+#include "Vector3Int.hpp"
 
-#include "ootzVector3.hpp"
+#include "Vector3.hpp"
 
 namespace ootz
 {

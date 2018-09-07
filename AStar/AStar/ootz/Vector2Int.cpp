@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "ootzVector2Int.hpp"
+#include "Vector2Int.hpp"
 
 namespace ootz
 {

@@ -163,24 +163,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ootzAStar\ootzAStar.hpp" />
-    <ClInclude Include="ootzAStar\ootzMath.hpp" />
-    <ClInclude Include="ootzAStar\ootzType.hpp" />
-    <ClInclude Include="ootzAStar\ootzUtility.hpp" />
-    <ClInclude Include="ootzAStar\ootzVector2Int.hpp" />
-    <ClInclude Include="ootzAStar\ootzVector3.hpp" />
-    <ClInclude Include="ootzAStar\ootzVector3Int.hpp" />
-    <ClInclude Include="ootzAStar\SinglyLinkedList.hpp" />
+    <ClInclude Include="ootz\AStar.hpp" />
+    <ClInclude Include="ootz\Math.hpp" />
+    <ClInclude Include="ootz\Type.hpp" />
+    <ClInclude Include="ootz\Utility.hpp" />
+    <ClInclude Include="ootz\Vector2Int.hpp" />
+    <ClInclude Include="ootz\Vector3.hpp" />
+    <ClInclude Include="ootz\Vector3Int.hpp" />
+    <ClInclude Include="ootz\SinglyLinkedList.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ootzAStar\ootzAStar.cpp" />
-    <ClCompile Include="ootzAStar\ootzUtility.cpp" />
-    <ClCompile Include="ootzAStar\ootzVector2Int.cpp" />
-    <ClCompile Include="ootzAStar\ootzVector3.cpp" />
-    <ClCompile Include="ootzAStar\ootzVector3Int.cpp" />
+    <ClCompile Include="ootz\AStar.cpp" />
+    <ClCompile Include="ootz\Utility.cpp" />
+    <ClCompile Include="ootz\Vector2Int.cpp" />
+    <ClCompile Include="ootz\Vector3.cpp" />
+    <ClCompile Include="ootz\Vector3Int.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

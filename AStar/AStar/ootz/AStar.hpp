@@ -3,10 +3,10 @@
 #include <map>
 #include <deque>
 
-#include "ootzType.hpp"
-#include "ootzUtility.hpp"
-#include "ootzVector3.hpp"
-#include "ootzVector3Int.hpp"
+#include "Type.hpp"
+#include "Utility.hpp"
+#include "Vector3.hpp"
+#include "Vector3Int.hpp"
 
 namespace ootz
 {

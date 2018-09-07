@@ -21,28 +21,28 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzMath.hpp">
+    <ClInclude Include="ootz\AStar.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzAStar.hpp">
+    <ClInclude Include="ootz\Math.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzUtility.hpp">
+    <ClInclude Include="ootz\SinglyLinkedList.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzType.hpp">
+    <ClInclude Include="ootz\Type.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzVector3.hpp">
+    <ClInclude Include="ootz\Utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzVector3Int.hpp">
+    <ClInclude Include="ootz\Vector2Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\ootzVector2Int.hpp">
+    <ClInclude Include="ootz\Vector3.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootzAStar\SinglyLinkedList.hpp">
+    <ClInclude Include="ootz\Vector3Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,19 +53,19 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootzAStar\ootzVector3.cpp">
+    <ClCompile Include="ootz\AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootzAStar\ootzVector3Int.cpp">
+    <ClCompile Include="ootz\Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootzAStar\ootzUtility.cpp">
+    <ClCompile Include="ootz\Vector2Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootzAStar\ootzVector2Int.cpp">
+    <ClCompile Include="ootz\Vector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootzAStar\ootzAStar.cpp">
+    <ClCompile Include="ootz\Vector3Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

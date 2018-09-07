@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "ootzAStar.hpp"
+#include "AStar.hpp"
 
 #include <unordered_set>
 #include <unordered_map>

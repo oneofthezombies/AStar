@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "ootzVector3.hpp"
+#include "Vector3.hpp"
 
 #include <cassert>
 
-#include "ootzType.hpp"
-#include "ootzVector3Int.hpp"
+#include "Type.hpp"
+#include "Vector3Int.hpp"
 
 namespace ootz
 {

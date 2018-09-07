@@ -3,7 +3,7 @@
 #include <cassert>
 #include <iostream>
 
-#include "ootzType.hpp"
+#include "Type.hpp"
 
 namespace ootz
 {
