@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Vector3Int.hpp"
 
+#include <iostream>
+
 #include "Vector3.hpp"
 
 namespace ootz
@@ -86,6 +88,12 @@ Vector3Int operator*(const Vector3Int& lhs, const Int rhs)
 Vector3Int operator*(const Int lhs, const Vector3Int& rhs)
 {
     return rhs * lhs;
+}
+
+std::ostream& operator<<(std::ostream& os, const Vector3Int& val)
+{
+    os << val.x << ' ' << val.y << ' ' << val.z;
+    return os;
 }
 
 } // namespace ootz

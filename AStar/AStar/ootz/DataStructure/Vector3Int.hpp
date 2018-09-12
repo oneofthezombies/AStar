@@ -1,9 +1,11 @@
 #pragma once
 
-#include "Type.hpp"
+#include "../Type.hpp"
 
 namespace ootz
 {
+
+struct Vector3;
 
 struct Vector3Int
 {
@@ -44,5 +46,7 @@ Vector3Int operator+(const Vector3Int& lhs, const Vector3Int& rhs);
 Vector3Int operator-(const Vector3Int& lhs, const Vector3Int& rhs);
 Vector3Int operator*(const Vector3Int& lhs, const Int rhs);
 Vector3Int operator*(const Int lhs, const Vector3Int& rhs);
+
+std::ostream& operator<<(std::ostream& os, const Vector3Int& val);
 
 } // namespace ootz

@@ -5,8 +5,8 @@
 
 #include "Type.hpp"
 #include "Utility.hpp"
-#include "Vector3.hpp"
-#include "Vector3Int.hpp"
+#include "DataStructure/Vector3.hpp"
+#include "DataStructure/Vector3Int.hpp"
 
 namespace ootz
 {

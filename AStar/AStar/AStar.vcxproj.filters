@@ -27,22 +27,25 @@
     <ClInclude Include="ootz\Math.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootz\SinglyLinkedList.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ootz\Type.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ootz\Utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootz\Vector2Int.hpp">
+    <ClInclude Include="ootz\DataStructure\SinglyLinkedList.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootz\Vector3.hpp">
+    <ClInclude Include="ootz\DataStructure\Vector2Int.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ootz\Vector3Int.hpp">
+    <ClInclude Include="ootz\DataStructure\Vector3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ootz\DataStructure\Vector3Int.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ootz\DataStructure\Tree.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,13 +62,16 @@
     <ClCompile Include="ootz\Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootz\Vector2Int.cpp">
+    <ClCompile Include="ootz\DataStructure\Vector2Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootz\Vector3.cpp">
+    <ClCompile Include="ootz\DataStructure\Vector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ootz\Vector3Int.cpp">
+    <ClCompile Include="ootz\DataStructure\Vector3Int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ootz\Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

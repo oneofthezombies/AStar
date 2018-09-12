@@ -2,8 +2,9 @@
 #include "Vector3.hpp"
 
 #include <cassert>
+#include <iostream>
 
-#include "Type.hpp"
+#include "../Type.hpp"
 #include "Vector3Int.hpp"
 
 namespace ootz
@@ -19,9 +20,9 @@ Vector3 Vector3::One()
     return Vector3(1.0f, 1.0f, 1.0f);
 }
 
-Vector3s Vector3::EightDirections()
+List<Vector3> Vector3::EightDirections()
 {
-    return Vector3s
+    return List<Vector3>
     {
         Vector3(0.0f, 0.0f, 1.0f),
         Vector3(1.0f, 0.0f, 1.0f),
@@ -116,6 +117,12 @@ Vector3 operator/(const Vector3& lhs, const float rhs)
     assert(rhs != 0.0f && "divided by zero");
 
     return Vector3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
+}
+
+std::ostream& operator<<(std::ostream& os, const Vector3& val)
+{
+    os << val.x << ' ' << val.y << ' ' << val.z;
+    return os;
 }
 
 } // namespace ootz

@@ -30,7 +30,7 @@ GridGraph::GridGraph(
 
     const UInt numNode = numNodeX * numNodeZ;
 
-    const UInts nums = Utility::Range<UInt>(numNode);
+    const List<UInt> nums = Utility::Range<UInt>(numNode);
 
     const UInt widthWithoutCenter = numNodeX - 1;
     const UInt depthWithoutCenter = numNodeZ - 1;
