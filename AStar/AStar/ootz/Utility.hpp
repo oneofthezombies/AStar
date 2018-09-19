@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <numeric>
+#include <iterator>
 
 #include "Type.hpp"
 
@@ -53,6 +54,92 @@ public:
     static auto Range(const T& count) -> List<RetTy>
     {
         return Range<RetTy>(0, count);
+    }
+
+    template<class Ty>
+    static void Swap(Ty& lhs, Ty& rhs)
+    {
+        Ty temp = lhs;
+        lhs = rhs;
+        rhs = temp;
+    }
+
+    template<class Ty, class Comp>
+    static void BubbleSort(List<Ty>& list, const Comp& compare)
+    {
+        for (int n = list.size(); n > 0; --n)
+        {
+            for (int i = 0; i < n - 1; ++i)
+            {
+                if (compare(list[i + 1], list[i]))
+                    Swap(list[i + 1], list[i]);
+            }
+        }
+    }
+
+    template<class Ty>
+    static void BubbleSort(List<Ty>& list)
+    {
+        BubbleSort(list, std::less<Ty>{});
+    }
+
+    template<class Ty, class Comp>
+    static void SelectionSort(List<Ty>& list, const Comp& compare)
+    {
+        for (int n = 0; n < list.size(); ++n)
+        {
+            int less_i = n;
+            for (int i = n; i < list.size(); ++i)
+            {
+                if (compare(list[i], list[less_i]))
+                    less_i = i;
+            }
+
+            Swap(list[n], list[less_i]);
+        }
+    }
+
+    template<class Ty>
+    static void SelectionSort(List<Ty>& list)
+    {
+        SelectionSort(list, std::less<Ty>{});
+    }
+
+    template<class Ty, class Comp>
+    static void InsertionSort(List<Ty>& list, const Comp& compare)
+    {
+        auto findPlace = [](List<Ty>& list, const Size size, const Comp& compare) -> Size
+        {
+            int i = size - 1;
+            for (; i >= 0; --i)
+            {
+                if (!compare(list[size], list[i]))
+                    break;
+            }
+            ++i;
+            return i;
+        };
+
+        auto shiftRight = [](List<Ty>& list, const Size first, const Size last, const Size count)
+        {
+            const auto first_ = list.begin() + first;
+            std::move(first_, list.begin() + last, first_ + count);
+        };
+
+        for (int n = 1; n < list.size(); ++n)
+        {
+            auto i = findPlace(list, n, compare);
+
+            Ty temp = list[n];
+            shiftRight(list, i, n, 1);
+            list[i] = temp;
+        }
+    }
+
+    template<class Ty>
+    static void InsertionSort(List<Ty>& list)
+    {
+        InsertionSort(list, std::less<Ty>{});
     }
 };
 

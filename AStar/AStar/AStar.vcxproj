@@ -164,6 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ootz\AStar.hpp" />
+    <ClInclude Include="ootz\DataStructure\Heap.hpp" />
     <ClInclude Include="ootz\DataStructure\Tree.hpp" />
     <ClInclude Include="ootz\Math.hpp" />
     <ClInclude Include="ootz\Type.hpp" />
